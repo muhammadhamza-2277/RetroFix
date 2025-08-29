@@ -20,9 +20,9 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 // Dummy image imports
 import img1 from '../../assets/Home-page/external-wall-insulation.jpg';
-import img2 from '../../assets/Home-page/Internal-wall-insulation.jpg';
-import img3 from '../../assets/Home-page/loft.jpg';
-import img4 from '../../assets/Home-page/Boiler Upgrade.jpg';
+import img2 from '../../assets/Home-page/internal-wall-insulation.jpg';
+import img3 from '../../assets/Home-page/Loft.jpg';
+import img4 from '../../assets/Home-page/Boiler upgrade.jpg';
 import img5 from '../../assets/solar.webp';
 import img6 from '../../assets/pumpp.jpg';
 
