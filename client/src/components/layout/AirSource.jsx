@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import heatPumpBanner from "../../assets/AirSource.avif"; // adjust the path if needed
+import heatPumpBanner from "@assets/AirSource/Airsource.avif"; // adjust the path if needed
 
 const HeatPumpBanner = () => {
   return (
