@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import path from "path";   // ⬅️ Add this line
-import path, { dirname } from "path";
+import path from "path";   // ⬅️ Add this line\
 
 // https://vite.dev/config/
 export default defineConfig({
