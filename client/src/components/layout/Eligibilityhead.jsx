@@ -8,7 +8,7 @@ const HeroSection = () => {
       sx={{
         position: "relative",
         // width: "100vw",
-        height: "110vh",
+        maxHeight: { xs: '90vh', sm: '100vh' },
         backgroundImage: `linear-gradient(to right, rgba(0.1, 0.1, 0.1, 0.9), rgba(0, 0, 0, 0.4)), url(${bg})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",

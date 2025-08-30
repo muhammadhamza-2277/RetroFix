@@ -6,11 +6,6 @@ import {
 
 } from '@mui/material';
 import bgImage from '../../assets/5index.webp';
-import solarImage from '../../assets/About-page/solar.webp'
-import loftImage from '../../assets/About-page/loft.webp'
-import iwiImage from '../../assets/About-page/iwi.webp'
-import ewiImage from '../../assets/About-page/ewi.webp'
-import boilerImage from '../../assets/About-page/boiler.png'
 
 const AboutHero = () => {
     const theme = useTheme();
@@ -28,7 +23,7 @@ const AboutHero = () => {
                 position: 'relative',
                 overflow: 'hidden',
                 minHeight: '110vh',
-                mt: '-75px',
+                mt: '-76px',
                 '&::before': {
                     content: '""',
                     position: 'absolute',

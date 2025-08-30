@@ -7,21 +7,21 @@ const testimonials = [
     {
         name: 'Jenny Wilson',
         role: 'Google Reviewer',
-        image: '/ICONS/ok.png', // Placeholders
+        image: 'https://i.pravatar.cc/40?img=1', // Placeholders
         title: 'Professional and Friendly!',
         description: `Boys did our loft insulation. I'm very happy with the service. Staff was professional, considerate and approachable. I liked their attention to details approach. Process was explained before they arrived on site. I'll highly recommend this company.`,
     },
     {
         name: 'Bessie Cooper',
         role: 'Google Reviewer',
-        image: '/ICONS/ok.png',
+        image: 'https://i.pravatar.cc/40?img=5',
         title: 'Excellent Hospitality!',
         description: `Retrofix Solutions delivered outstanding service for our insulation project. Their team provided excellent, consistent communication every step of the way. The staff were friendly, and the project was completed efficiently and on schedule. Highly recommended for their professionalism and attention to detail.`,
     },
     {
         name: 'Albert Flores',
         role: 'Google Reviewer',
-        image: '/ICONS/ok.png',
+        image: 'https://i.pravatar.cc/40?img=4',
         title: 'Outstanding Work!',
         description: `Very impressed by the team's efficiency and politeness. Everything was well communicated and executed with care. The insulation was neat and effective. Definitely a 5-star experience!`,
     },
@@ -92,7 +92,7 @@ const Testimonials = () => {
                                 }}
                             >
                                 <CardContent>
-                                    <Typography variant="h6" fontWeight="bold" gutterBottom>
+                                    <Typography variant="h6" fontWeight="bold" gutterBottom color='background.secondary'>
                                         {item.title}
                                     </Typography>
                                     <Typography
@@ -105,8 +105,8 @@ const Testimonials = () => {
                                     <Stack direction="row" alignItems="center" spacing={2}>
                                         <Avatar src={item.image} alt={item.name} />
                                         <Box>
-                                            <Typography fontWeight="bold">{item.name}</Typography>
-                                            <Typography variant="caption" color="text.secondary">
+                                            <Typography fontWeight="bold" >{item.name}</Typography>
+                                            <Typography variant="caption" color="background.primary">
                                                 {item.role}
                                             </Typography>
                                         </Box>

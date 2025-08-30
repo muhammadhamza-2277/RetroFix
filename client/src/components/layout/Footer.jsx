@@ -118,10 +118,29 @@ const Footer = () => {
                                             >
                                                 {stat.value}
                                             </a>
+                                        ) : stat.label === 'OFFICE PHONE' ? (
+                                            <a
+                                                href={`tel:${stat.value}`}
+                                                style={{ color: 'inherit', textDecoration: 'none' }}
+                                            >
+                                                {stat.value}
+                                            </a>
+                                        ) : stat.label === 'ADDRESS' ? (
+                                            <a
+                                                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                                                    stat.value
+                                                )}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                style={{ color: 'inherit', textDecoration: 'none' }}
+                                            >
+                                                {stat.value}
+                                            </a>
                                         ) : (
                                             stat.value
                                         )}
                                     </Typography>
+
                                     <Typography variant="body2" sx={{ color: 'grey.400' }}>
                                         {stat.label}
                                     </Typography>

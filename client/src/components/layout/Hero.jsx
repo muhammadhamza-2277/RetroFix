@@ -17,7 +17,8 @@ const slides = [
         },
         paragraph: 'Cut your energy costs with sustainable solutions, and get your concerns addressed effortlessly, all backed by certified protection!.',
 
-        button1: 'Learn More'
+        button: 'Contact Us',
+        buttonLink: '/contact'
     },
     {
         image: img2,
@@ -27,7 +28,8 @@ const slides = [
             after: 'Program'
         },
         paragraph: 'Take advantage of our boiler upgrade program to improve your home heating efficiency.',
-        button1: 'View Program',
+        button: 'View Program',
+        buttonLink: '/grants/boiler'
     },
     {
         image: img3,
@@ -37,7 +39,8 @@ const slides = [
             after: 'Services'
         },
         paragraph: 'Harness the power of the sun with our professional solar panel installation services.',
-        button1: 'Explore Options',
+        button: 'Explore Options',
+        buttonLink: '/grants/solar'
     }
 ];
 
@@ -161,11 +164,12 @@ const HeroSlider = () => {
                             <Button
                                 variant="filled"
                                 color="primary"
-                                sx={{
-                                    // alignItems: 'center',
-                                }}
+                                component="a" // 👈 makes the button act as a link
+                                href={slide.buttonLink}
+                                target={slide.buttonLink.startsWith('http') ? '_blank' : undefined}
+                                rel={slide.buttonLink.startsWith('http') ? 'noopener noreferrer' : undefined}
                             >
-                                {slide.button1}
+                                {slide.button}
                             </Button>
                         </ButtonsContainer>
                     </SlideContainer>

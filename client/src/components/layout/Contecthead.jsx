@@ -9,7 +9,7 @@ const HeroSection = () => {
       sx={{
         position: "relative",
         // width: "100vw",
-        height: "105vh",
+        maxHeight: { xs: '90vh', sm: '100vh' },
         backgroundImage: `linear-gradient(to right, rgba(0.1, 0.1, 0.1, 0.9), rgba(0, 0, 0, 0.2)), url(${bg})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
@@ -24,7 +24,7 @@ const HeroSection = () => {
         px: { xs: 2, sm: 4, md: 10 },
         py: { xs: 25, sm: 20 },
         // pt: 50,
-        mt: "-75px"
+        mt: "-76px"
       }}
     >
       <Box

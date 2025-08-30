@@ -6,6 +6,7 @@ import {
     Button,
     useTheme,
 } from '@mui/material';
+import { Link } from "react-router-dom";
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import PersonIcon from '@mui/icons-material/Person';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
@@ -109,12 +110,24 @@ const CompanyInNumbers = () => {
                                 // backgroundColor: '#007f1c',
 
                             }} />
-                        <Typography variant="h5" sx={{ color: '#007f1c', fontWeight: '620', }}>
-                            0800 058 4530
+                        <Typography
+                            variant="h5"
+                            sx={{ color: '#007f1c', fontWeight: 620 }}
+                        >
+                            <a
+                                href="tel:08000584530"
+                                style={{ color: 'inherit', textDecoration: 'none' }}
+                            >
+                                0800 058 4530
+                            </a>
                         </Typography>
+
                     </Stack>
                     <Button
                         variant="filled"
+                        component={Link}
+                        to="/contact"
+
                         sx={{
 
                             width: { xs: '100%', sm: "fit-content" },
