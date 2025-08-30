@@ -9,7 +9,7 @@ const HeroSection = () => {
       sx={{
         position: "relative",
         // width: "100vw",
-        height: { xs: "90vh", sm: "110vh" },
+        height: "105vh",
         backgroundImage: `linear-gradient(to right, rgba(0.1, 0.1, 0.1, 0.9), rgba(0, 0, 0, 0.2)), url(${bg})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
@@ -22,9 +22,9 @@ const HeroSection = () => {
         boxSizing: "border-box",
         // px: { xs: 3, md: 10 },
         px: { xs: 2, sm: 4, md: 10 },
-        py: { xs: 10, sm: '' },
-
-
+        py: { xs: 25, sm: 20 },
+        // pt: 50,
+        mt: "-75px"
       }}
     >
       <Box
@@ -66,7 +66,7 @@ const HeroSection = () => {
             fontWeight: 350,
           }}
         >
-          We’re here to help you take the next step. Whether you have questions, need  a  quote,<br /> or want expert guidance — the team at Retrofix Solutions is just a message away.<br /> Let’s connect and build a brighter, energy-efficient future together.
+          We’re here to help you take the next step. Whether you have questions, need  a  quote, or want expert guidance — the team at Retrofix Solutions is just a message away. Let’s connect and build a brighter, energy-efficient future together.
         </Typography>
       </Box>
     </Box>

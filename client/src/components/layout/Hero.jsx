@@ -3,7 +3,7 @@ import { Box, Typography, Button, useTheme, useMediaQuery } from '@mui/material'
 import { styled } from '@mui/system';
 
 // Import your images
-import img1 from '../../assets/Home-page/MODERN-HOME.jpg';
+import img1 from '../../assets/Home-page/ModernHome.jpg';
 import img2 from '../../assets/Home-page/Boiler upgrade.jpg';
 import img3 from '../../assets/Home-page/Solar panel.jpg';
 
