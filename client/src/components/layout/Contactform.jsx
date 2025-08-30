@@ -157,17 +157,19 @@ export default function ContactForm() {
         component="form"
         onSubmit={handleSubmit}
         sx={{
-          maxWidth: 700,
+          width: '100%', // let it shrink on small screens
+          maxWidth: { xs: '100%', sm: 500, md: 700 }, // full width on mobile, 500px on small, 700px on md+
           mx: 'auto',
           mt: 6,
-          px: 5,
-          py: 6,
+          px: { xs: 2, sm: 4, md: 5 }, // smaller padding on mobile
+          py: { xs: 3, sm: 4, md: 6 },
           boxShadow: 4,
           borderRadius: 3,
           backgroundColor: 'background.paper',
           display: 'flex',
           flexDirection: 'column',
           gap: 3,
+
         }}
         noValidate
       >

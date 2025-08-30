@@ -5,6 +5,7 @@ import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
+import { Link as RouterLink } from "react-router-dom";
 
 const stats = [
     {
@@ -30,6 +31,27 @@ const stats = [
 const Footer = () => {
     const theme = useTheme();
 
+    const footerLinks = [
+        { label: "Home", path: "/home" },
+        { label: "About", path: "/about" },
+        { label: "Career", path: "/career" },
+        { label: "Contact Us", path: "/contact" },
+    ];
+
+    const services = [
+        { label: "External Wall Insulation", path: "/grants/ewi" },
+        { label: "Internal Wall Insulation", path: "/grants/iwi" },
+        { label: "Air Source Heat Pumps", path: "/grants/ashp" },
+        { label: "Loft Insulation", path: "/grants/loft" },
+        { label: "Boiler Upgrade", path: "/grants/boiler" },
+    ];
+
+    const solutionsLinks = [
+        { label: "Check Eligibility", path: "/check-eligibility" },
+        { label: "Privacy Policy", path: "/privacy-policy" },
+        { label: "About Us", path: "/about" },
+        { label: "Contact Us", path: "/contact" },
+    ];
     return (
         <Box
             sx={{
@@ -128,23 +150,71 @@ const Footer = () => {
                             </Typography>
 
 
-                            <Box sx={{ mt: 2 }}>
-                                <IconButton href="#" sx={{ color: '#fff' }}><Instagram /></IconButton>
-                                <IconButton href="#" sx={{ color: '#fff' }}><Facebook /></IconButton>
-                                <IconButton href="#" sx={{ color: '#fff' }}><Twitter /></IconButton>
+                            <Box sx={{ mt: 2, display: "flex", gap: 1.5 }}>
+                                {[
+                                    { icon: <Instagram />, link: "#" },
+                                    { icon: <Facebook />, link: "#" },
+                                    { icon: <Twitter />, link: "#" },
+                                ].map((item, index) => (
+                                    <IconButton
+                                        key={index}
+                                        href={item.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        sx={{
+                                            color: "#fff",
+                                            transition: "all 0.3s ease",
+                                            "&:hover": {
+                                                color: "background.primary", // pick your universal hover color
+                                                transform: "scale(1.2)",
+                                                backgroundColor: 'text.default'
+                                            },
+                                        }}
+                                    >
+                                        {item.icon}
+                                    </IconButton>
+                                ))}
                             </Box>
+
                         </Box>
                     </Grid>
 
                     {/* Column 2: Menu */}
                     <Grid item xs={12} md={3}>
-                        <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%', minHeight: '240px' }}>
-                            <Typography variant="h6" sx={{ fontWeight: 'bold', borderBottom: `2px solid ${theme.palette.text.secondary}`, pb: 0.5, display: 'inline-block' }}>
+                        <Box
+                            sx={{
+                                display: "flex",
+                                flexDirection: "column",
+                                height: "100%",
+                                minHeight: "240px",
+                            }}
+                        >
+                            <Typography
+                                variant="h6"
+                                sx={{
+                                    fontWeight: "bold",
+                                    borderBottom: (theme) => `2px solid ${theme.palette.text.secondary}`,
+                                    pb: 0.5,
+                                    display: "inline-block",
+                                }}
+                            >
                                 Menu
                             </Typography>
-                            {['Home', 'About', 'Career', 'Services', 'Contact Us'].map((item) => (
-                                <Link href="#" key={item} underline="none" color="#ccc" display="block" sx={{ mt: 1 }}>
-                                    {item}
+
+                            {footerLinks.map((item) => (
+                                <Link
+                                    key={item.label}
+                                    component={RouterLink}
+                                    to={item.path}
+                                    underline="none"
+                                    color="#ccc"
+                                    display="block"
+                                    sx={{
+                                        mt: 1,
+                                        "&:hover": { color: "white" }, // nice hover effect
+                                    }}
+                                >
+                                    {item.label}
                                 </Link>
                             ))}
                         </Box>
@@ -152,19 +222,40 @@ const Footer = () => {
 
                     {/* Column 3: Services */}
                     <Grid item xs={12} md={3}>
-                        <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%', minHeight: '240px' }}>
-                            <Typography variant="h6" sx={{ fontWeight: 'bold', borderBottom: `2px solid ${theme.palette.text.secondary}`, pb: 0.5, display: 'inline-block' }}>
+                        <Box
+                            sx={{
+                                display: "flex",
+                                flexDirection: "column",
+                                height: "100%",
+                                minHeight: "240px",
+                            }}
+                        >
+                            <Typography
+                                variant="h6"
+                                sx={{
+                                    fontWeight: "bold",
+                                    borderBottom: (theme) => `2px solid ${theme.palette.text.secondary}`,
+                                    pb: 0.5,
+                                    display: "inline-block",
+                                }}
+                            >
                                 Our Services
                             </Typography>
-                            {[
-                                'External Wall Insulation',
-                                'Internal Wall Insulation',
-                                'Air Source Heat Pumps',
-                                'Loft Insulation',
-                                'Boiler Upgrade',
-                            ].map((service) => (
-                                <Link href="#" key={service} underline="none" color="#ccc" display="block" sx={{ mt: 1 }}>
-                                    {service}
+
+                            {services.map((service) => (
+                                <Link
+                                    key={service.label}
+                                    component={RouterLink}
+                                    to={service.path}
+                                    underline="none"
+                                    color="#ccc"
+                                    display="block"
+                                    sx={{
+                                        mt: 1,
+                                        "&:hover": { color: "white" }, // hover effect
+                                    }}
+                                >
+                                    {service.label}
                                 </Link>
                             ))}
                         </Box>
@@ -172,13 +263,40 @@ const Footer = () => {
 
                     {/* Column 4: Company Links */}
                     <Grid item xs={12} md={3}>
-                        <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%', minHeight: '240px' }}>
-                            <Typography variant="h6" sx={{ fontWeight: 'bold', borderBottom: `2px solid ${theme.palette.text.secondary}`, pb: 0.5, display: 'inline-block' }}>
+                        <Box
+                            sx={{
+                                display: "flex",
+                                flexDirection: "column",
+                                height: "100%",
+                                minHeight: "240px",
+                            }}
+                        >
+                            <Typography
+                                variant="h6"
+                                sx={{
+                                    fontWeight: "bold",
+                                    borderBottom: (theme) => `2px solid ${theme.palette.text.secondary}`,
+                                    pb: 0.5,
+                                    display: "inline-block",
+                                }}
+                            >
                                 Retrofixs Solutions
                             </Typography>
-                            {['Check Eligibility', 'Privacy Policy', 'About Us', 'Contact Us'].map((item) => (
-                                <Link href="#" key={item} underline="none" color="#ccc" display="block" sx={{ mt: 1 }}>
-                                    {item}
+
+                            {solutionsLinks.map((item) => (
+                                <Link
+                                    key={item.label}
+                                    component={RouterLink}
+                                    to={item.path}
+                                    underline="none"
+                                    color="#ccc"
+                                    display="block"
+                                    sx={{
+                                        mt: 1,
+                                        "&:hover": { color: "white" }, // hover effect
+                                    }}
+                                >
+                                    {item.label}
                                 </Link>
                             ))}
                         </Box>

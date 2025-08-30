@@ -18,10 +18,13 @@ export default function HighlightedSection() {
           display: "flex",
           alignItems: "center",
           justifyContent: "flex-start",
-          px: { xs: 3, md: 8 },
-          py: { xs: 4, md: 10 },
+          px: { xxs: 3, md: 8 },
+          py: { xxs: 4, md: 10 },
           background: "linear-gradient(to right,#d4ddce,#92e0b3, #e3f1d8, 30%, transparent 30%)",
-          flexDirection: { xs: "column", md: "row" },
+          flexDirection: { xxs: "column", md: "row" },
+          maxWidth: "1200px",
+
+          mx: 'auto'
         }}
       >
         {/* Image */}
@@ -32,7 +35,7 @@ export default function HighlightedSection() {
             alt="Home Image"
             sx={{
               width: "100%",
-              minWidth: { md: "420px" },
+              minWidth: { xxm: '300px', md: "420px" },
               borderRadius: "12px",
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.3)",
             }}

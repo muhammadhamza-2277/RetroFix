@@ -29,7 +29,7 @@ function ContactformLeftContent() {
                     width: theme.layout?.maxContentWidth || '100%',
                     maxWidth: theme.layout?.maxContentWidth || '100%',
                     mx: 'auto',
-                    mt: 6,
+                    // mt: 6,
                     px: 2,
                     flexWrap: 'wrap',
                 }}

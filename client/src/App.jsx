@@ -12,6 +12,7 @@ import Loft from './components/pages/Loft';
 import FTCH from './components/pages/FTCH';
 import Solar from './components/pages/SolarPanel';
 import Checkeligibility from './components/pages/CheckEligibility'
+import PrivacyPolicy from './components/pages/PrivacyPolicy';
 
 import AdminDashboard from './components/pages/AdminDashboard';
 import AdminLogin from './components/pages/AdminLogin';
@@ -50,6 +51,8 @@ const App = () => {
               </ProtectedRoute>
             }
           />
+
+          <Route path='/privacy-policy' element={<PrivacyPolicy />} />
 
         </Routes>
       </BrowserRouter>

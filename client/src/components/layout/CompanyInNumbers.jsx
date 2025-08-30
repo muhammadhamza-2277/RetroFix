@@ -117,7 +117,13 @@ const CompanyInNumbers = () => {
                 </Box>
 
                 {/* RIGHT COLUMN */}
-                <Grid container spacing={3} >
+                <Grid
+                    container
+                    spacing={3}
+                    sx={{
+                        flexDirection: { xs: "column", sm: "row" },
+                    }}
+                >
                     {stats.map((stat, index) => (
                         <Grid item xs={12} sm={6} lg={3} key={index} sx={{ minWidth: '200px', }}>
                             <Box

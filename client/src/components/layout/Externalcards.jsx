@@ -1,5 +1,6 @@
 import React from "react";
-import outsideImg from "../../assets/outside.jpg"; // adjust path to where your image actually is
+import { Box, Typography, Grid } from "@mui/material";
+import outsideImg from "../../assets/outside.jpg"; // adjust path
 
 const features = [
   {
@@ -18,106 +19,128 @@ const features = [
 
 export default function EWISection() {
   return (
-    <section
-      style={{
+    <Box
+      component="section"
+      sx={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${outsideImg})`,
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
         backgroundRepeat: "no-repeat",
-        backgroundSize: 'cover',
+        backgroundSize: "cover",
         fontFamily: "'Poppins', sans-serif",
         color: "#2d2d2d",
         lineHeight: 1.7,
-        padding: "40px 60px"
+        px: { xs: 2, sm: 4, md: 6 },
+        py: { xs: 4, sm: 6, md: 8 },
       }}
     >
-      <h2
-        style={{
-          fontSize: "37px",
-          color: "#fff",
-          fontWeight: 600,
-          marginBottom: "20px"
-        }}
-      >
-        External Wall Insulation (EWI)
-      </h2>
 
-      <p
-        style={{
-          fontSize: "18px",
-          color: "#f1f1f1",
-          marginBottom: "40px",
-          maxWidth: "700px",
-          fontWeight: 400
-        }}
-      >
-        Do you have solid walls and a cold, uncomfortable home?
-        <br />
-        <strong>Reimagine your living space</strong> with External Wall
-        Insulation — a smart way to cut energy bills, boost warmth, and upgrade
-        your home's appearance.
-      </p>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: "30px"
+      <Box
+
+        sx={{
+          maxWidth: "1200px",
+
+          mx: 'auto'
+
         }}
       >
-        {features.map((feature, index) => (
-          <div
-            key={index}
-            style={{
-              background: "#fff",
-              padding: "25px",
-              borderRadius: "12px",
-              borderLeft: "5px solid #3d5c3b",
-              boxShadow: "0 4px 14px rgba(0,0,0,0.06)",
-              transition: "transform 0.3s ease",
-              marginTop: "50px",
-              marginBottom: "100px",
-              minHeight: "260px",
-              width: "100%",
-              maxWidth: "350px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "flex-start",
-              overflow: "hidden"
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-5px)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-            }}
-          >
-            <h3
-              style={{
-                fontSize: "18px",
-                color: "#ff6600",
-                marginBottom: "12px"
-              }}
-            >
-              {feature.title}
-            </h3>
-            <div
-              style={{
-                fontSize: "16px",
-                color: "#000",
-                background:
-                  "linear-gradient(to right, #f0f4f8, #b7eeb0)",
-                padding: "20px",
-                borderRadius: "5px",
-                overflowY: "auto",
-                flexGrow: 1
-              }}
-            >
-              {feature.text}
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+
+        <Typography
+          variant="h2"
+          sx={{
+            fontSize: { xs: "26px", sm: "32px", md: "37px" },
+            color: "#fff",
+            fontWeight: 600,
+            mb: 2,
+            p: { xxs: "10px", xs: "16px", sm: "24px", md: "32px" }
+          }}
+        >
+          External Wall Insulation (EWI)
+        </Typography>
+
+        <Typography
+          sx={{
+            fontSize: { xs: "15px", sm: "16px", md: "18px" },
+            color: "#f1f1f1",
+            mb: { xs: 4, sm: 6 },
+            maxWidth: 700,
+            fontWeight: 400,
+            textAlign: { xxs: 'justify', sm: 'left' },
+            p: { xxs: "10px", xs: "16px", sm: "24px", md: "32px" }
+          }}
+        >
+          Do you have solid walls and a cold, uncomfortable home?
+          <br />
+          <strong>Reimagine your living space</strong> with External Wall
+          Insulation — a smart way to cut energy bills, boost warmth, and upgrade
+          your home's appearance.
+        </Typography>
+
+        <Grid
+          container
+          spacing={3}
+          sx={{
+            p: { xxs: "10px", xs: "16px", sm: "24px", md: "32px" }
+          }}
+        >
+          {features.map((feature, index) => (
+            <Grid item
+              xxs={12}  // full width on extra small phones
+              sm={6}    // 2 cards per row on tablets
+              md={4}    // 3 cards per row on desktops
+              lg={3}    // 4 cards per row on large screens
+              xl={2}    // 6 cards per row on very large screens
+              key={index}>
+              <Box
+                sx={{
+                  background: "#fff",
+                  p: { xxs: "10px", xs: "16px", sm: "24px", md: "32px" },
+
+                  borderRadius: "12px",
+                  borderLeft: "5px solid #3d5c3b",
+                  boxShadow: "0 4px 14px rgba(0,0,0,0.06)",
+                  transition: "transform 0.3s ease",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "flex-start",
+                  minHeight: { xxs: 180, sm: 220, md: 260 },
+                  maxWidth: { xxs: "100%", sm: "250px", md: "350px", lg: "400px" },
+                  "&:hover": {
+                    transform: "translateY(-5px)",
+                  },
+                }}
+              >
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontSize: { xxs: "16px", sm: "18px" },
+                    color: "#ff6600",
+                    mb: 1.5,
+                  }}
+                >
+                  {feature.title}
+                </Typography>
+
+                <Box
+                  sx={{
+                    fontSize: { xxs: "14px", sm: "15px", md: "16px" },
+                    color: "#000",
+                    background: "linear-gradient(to right, #f0f4f8, #b7eeb0)",
+                    p: { xxs: 1.5, sm: 2.5 },
+                    borderRadius: "5px",
+                    flexGrow: 1,
+                    overflowY: "auto",
+                  }}
+                >
+                  {feature.text}
+                </Box>
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
+
+      </Box>
+    </Box >
   );
 }

@@ -22,7 +22,7 @@ const HeroSection = () => {
         boxSizing: "border-box",
         // px: { xs: 3, md: 10 },
         px: { xs: 2, sm: 4, md: 10 },
-        py: { xs: 4, sm: 6, md: 10 },
+        py: 4,
 
 
       }}

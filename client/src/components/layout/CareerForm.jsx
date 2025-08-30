@@ -136,7 +136,7 @@ const InternshipApplication = () => {
         flexDirection: { xs: 'column', md: 'row' },
         minHeight: '100vh',
         background: '#f4f4f4',
-        padding: '40px',
+        padding: '20px',
       }}
     >
       {/*Left section*/}
@@ -146,7 +146,8 @@ const InternshipApplication = () => {
       <Box
         sx={{
           flex: 1.1,
-          padding: '40px',
+          p: { xs: '10px', md: '40px' }, // 👈 responsive padding
+          // py: '40px',
           background: '#fff',
           borderRadius: '0px 10px 10px 0px',
           boxShadow: '0 4px 20px rgba(0,0,0,0.1)',

@@ -14,7 +14,7 @@ function CareerFormLeftSection() {
             <Box
                 sx={{
                     flex: 0.9,
-                    padding: '40px',
+                    p: { xs: '10px', md: '40px' }, // 👈 responsive padding
                     background: 'linear-gradient(to left, #86cfa1, #a7ba9a)',
                     borderRadius: '10px 0 0 10px',
                     color: '#000',
