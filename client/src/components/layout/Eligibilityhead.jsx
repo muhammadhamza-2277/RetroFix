@@ -31,7 +31,7 @@ const HeroSection = () => {
           maxWidth: "1000px",
           color: "#ffffff",
           textAlign: "left", // Align text to start
-          paddingLeft: '50px',
+          paddingLeft: '20px',
         }}
       >
         <Typography

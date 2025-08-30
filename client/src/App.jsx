@@ -16,14 +16,16 @@ import PrivacyPolicy from './components/pages/PrivacyPolicy';
 
 import AdminDashboard from './components/pages/AdminDashboard';
 import AdminLogin from './components/pages/AdminLogin';
-import ProtectedRoute from './components/pages/ProtectedRoute ';
+import ProtectedRoute from './components/pages/ProtectedRoute';
 
+import ScrollToTop from './components/layout/ScrollToTop';
 
 const App = () => {
 
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
@@ -38,7 +40,6 @@ const App = () => {
           <Route path='/grants/loft' element={<Loft />} />
           <Route path='/grants/ftch' element={<FTCH />} />
           <Route path='/grants/solar' element={<Solar />} />
-
 
           <Route path='/check-eligibility' element={<Checkeligibility />} />
 
