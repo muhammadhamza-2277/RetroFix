@@ -19,7 +19,7 @@ import GrantsDropdown from "./GrantsDropdown";
 
 const Navbar = () => {
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+    const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
 
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
@@ -82,8 +82,8 @@ const Navbar = () => {
                             },
                         }}
                     >
-                        <img src="/ICONS/ok.png" alt="GOC icon" width={50} />
-                        <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                        <img src="/apple-icon-180x180.png" alt="RetroFix icon" width={50} />
+                        <Typography variant="h6" sx={{ fontWeight: 600, pl: 2 }}>
                             Retrofixs Solutions
                         </Typography>
                     </IconButton>

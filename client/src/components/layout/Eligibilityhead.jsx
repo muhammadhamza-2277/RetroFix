@@ -7,7 +7,7 @@ const HeroSection = () => {
     <Box
       sx={{
         position: "relative",
-        width: "100vw",
+        // width: "100vw",
         height: "110vh",
         backgroundImage: `linear-gradient(to right, rgba(0.1, 0.1, 0.1, 0.9), rgba(0, 0, 0, 0.4)), url(${bg})`,
         backgroundRepeat: "no-repeat",
@@ -15,13 +15,13 @@ const HeroSection = () => {
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
         display: "flex",
-        alignItems: "center",
+        alignItems: "start",
         // textAlign:"center",
         // justifyContent:"center",
         boxSizing: "border-box",
         // px: { xs: 3, md: 10 },
         px: { xs: 2, sm: 4, md: 10 },
-        py: { xs: 4, sm: 6, md: 10 },
+        py: { xs: 20, sm: 10, md: 10 },
 
 
       }}
@@ -56,13 +56,13 @@ const HeroSection = () => {
           sx={{
             // fontSize: "1.2rem",
             fontSize: { xs: "0.9rem", sm: "1rem", md: "1.2rem" },
-
+            maxWidth: '800px',
             lineHeight: 1.6,
             fontWeight: 350,
             color: 'text.default',
           }}
         >
-          Find out if you qualify for our energy-saving solutions with our quick <br /> eligibility form. It only takes a few minutes to see how you can benefit!
+          Find out if you qualify for our energy-saving solutions with our quick eligibility form. It only takes a few minutes to see how you can benefit!
         </Typography>
       </Box>
     </Box>

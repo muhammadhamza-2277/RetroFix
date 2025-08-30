@@ -44,7 +44,7 @@ const SidebarDrawer = ({ open, toggleDrawer }) => {
       onClose={toggleDrawer(false)}
       PaperProps={{
         sx: {
-          width: 250, // default
+          width: 360, // default
           '@media (max-width:450px)': {
             width: '100%',   // full width
             // height: '100%',  // full height
@@ -55,7 +55,7 @@ const SidebarDrawer = ({ open, toggleDrawer }) => {
     >
       <Box
         sx={{
-          width: 250,
+          width: 360,
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
@@ -81,9 +81,21 @@ const SidebarDrawer = ({ open, toggleDrawer }) => {
             borderRadius: 9999,
           }}
         >
-          <Typography variant="h6" fontWeight={600}>
-            RetroFix Solutions Ltd.
-          </Typography>
+          <IconButton
+            component={Link} to="/home"
+            sx={{
+              '&:hover': {
+                backgroundColor: 'transparent',
+                boxShadow: 'none',
+                transform: 'none',
+              },
+            }}
+          >
+            <img src="/apple-icon-180x180.png" alt="RetroFix icon" width={50} />
+            <Typography variant="h6" sx={{ fontWeight: 600, pl: 2 }}>
+              Retrofixs Solutions
+            </Typography>
+          </IconButton>
           <IconButton onClick={toggleDrawer(false)}>
             <CloseIcon />
           </IconButton>

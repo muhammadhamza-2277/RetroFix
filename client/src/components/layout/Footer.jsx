@@ -107,9 +107,20 @@ const Footer = () => {
                                     <Typography
                                         variant="subtitle1"
                                         fontWeight={500}
-                                        sx={{ color: 'white', wordBreak: 'break-word' }}
+                                        sx={{ color: 'white' }}
                                     >
-                                        {stat.value}
+                                        {stat.label === 'OFFICE EMAIL' ? (
+                                            <a
+                                                href={`mailto:${stat.value}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                style={{ color: 'inherit', textDecoration: 'none' }}
+                                            >
+                                                {stat.value}
+                                            </a>
+                                        ) : (
+                                            stat.value
+                                        )}
                                     </Typography>
                                     <Typography variant="body2" sx={{ color: 'grey.400' }}>
                                         {stat.label}

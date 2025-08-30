@@ -80,7 +80,13 @@ const CompanyInNumbers = () => {
                 }}
             >
                 {/* LEFT COLUMN */}
-                <Box sx={{ flex: 1, color: 'white', minWidth: { lg: '500px', md: '300px' } }}>
+                <Box
+                    sx={{
+                        flex: 1,
+                        color: 'white',
+                        minWidth: { lg: '500px', md: '300px' },
+                        mx: 'auto'
+                    }}>
                     <Typography variant="h4" fontWeight="bold" sx={{ mb: 2 }}>
                         Have <Box component="span" sx={{ color: theme.palette.text.secondary, }}>8 Years</Box> of Excellence
                     </Typography>
@@ -109,6 +115,11 @@ const CompanyInNumbers = () => {
                     </Stack>
                     <Button
                         variant="filled"
+                        sx={{
+
+                            width: { xs: '100%', sm: "fit-content" },
+                            mx: { xs: 'auto' }
+                        }}
                     >
                         Contact Us
                     </Button>
