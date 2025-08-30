@@ -93,7 +93,7 @@ const SidebarDrawer = ({ open, toggleDrawer }) => {
           >
             <img src="/apple-icon-180x180.png" alt="RetroFix icon" width={50} />
             <Typography variant="h6" sx={{ fontWeight: 600, pl: 2 }}>
-              Retrofixs Solutions
+              Retrofix Solutions
             </Typography>
           </IconButton>
           <IconButton onClick={toggleDrawer(false)}>

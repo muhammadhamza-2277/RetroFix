@@ -158,7 +158,7 @@ const Footer = () => {
                         <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%', minHeight: '240px' }}>
                             <Box>
                                 <Typography variant="h5" sx={{ fontWeight: 'bold', color: theme.palette.text.secondary }}>
-                                    Retrofixs
+                                    Retrofix
                                 </Typography>
                                 <Typography variant="h2" sx={{ color: 'text.default' }}>
                                     Solutions
