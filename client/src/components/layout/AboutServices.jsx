@@ -12,7 +12,7 @@ const AboutServices = () => {
         <Box
             sx={{
                 px: 4,
-                py: 8,
+                py: { xxs: 0, xs: 0, sm: 8 },
                 backgroundColor: '#f0f0f0'
             }}>
             <Grid
@@ -26,8 +26,11 @@ const AboutServices = () => {
                     <Grid
                         item
                         key={index}
-                        mt={-15}
+                        mt={{ xs: 0, sm: 0, md: -4, lg: -15 }}
                         zIndex={3}
+                        sx={{
+                            display: { xxs: 'none', xs: 'none', sm: 'block' }, // hide on xxs & sm, show on md+
+                        }}
                     >
                         <Box
                             sx={{

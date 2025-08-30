@@ -20,7 +20,7 @@ export default function ConnectSection() {
         px: 2,
         textAlign: "center",
         fontFamily: "'Segoe UI', sans-serif",
-        mb: 12,
+        // mb: 12,
         background: "linear-gradient(to bottom right, #fceabb, #e6e9f0, #cfd9df, #a1c4fd)",
       }}
     >
@@ -95,18 +95,11 @@ export default function ConnectSection() {
         {/* Buttons */}
         <Stack direction="row" justifyContent="center" gap={2} flexWrap="wrap">
           <Button
-            variant="contained"
+            variant="filled"
             component={Link}
             to="/contact"
             sx={{
-              backgroundColor: "#078330",
-              color: "#fff",
-              px: 3,
-              py: 1.5,
-              borderRadius: "25px",
-              fontWeight: 600,
-              fontSize: 15,
-              "&:hover": { backgroundColor: "#ff6600" },
+              // backgroundColor: "#078330",
             }}
           >
             Contact Us →

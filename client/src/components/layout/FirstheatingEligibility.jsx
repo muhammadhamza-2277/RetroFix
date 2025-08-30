@@ -40,7 +40,7 @@ const CtaSection = () => {
       </Box>
 
       {/* Button */}
-      <Box sx={{ flex: '0 0 auto', mt: { xs: 2, md: 0 } }}>
+      <Box sx={{ flex: { xs: '1 0 auto', sm: '0 0 auto' }, mt: { xs: 2, md: 0 } }}>
         <a href="#contact" style={{ textDecoration: 'none' }}>
           <Button
             variant="filled"

@@ -1,12 +1,16 @@
 import React from "react";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button, useTheme } from "@mui/material";
 import { styled } from "@mui/system";
 import { Link } from "react-router-dom";
 
 const PricingSection = () => {
+  const theme = useTheme();
   return (
-    <Section>
-      <Left>
+    <Section
+    >
+      <Left
+
+      >
         <Typography variant="h4" className="heading">
           We're Efficient with Loft Insulation
         </Typography>
@@ -22,7 +26,7 @@ const PricingSection = () => {
           sx={{
             mt: 4,
             alignSelf: { xs: 'center', md: 'flex-start' },
-            width: 'fit-content',
+            width: { xs: '100%', sm: 'fit-content' },
           }}
         >
           Check Eligibility
@@ -63,6 +67,7 @@ const PricingSection = () => {
           </Typography>
         </Card>
       </Right>
+
     </Section>
   );
 };
@@ -88,9 +93,9 @@ const Section = styled(Box)(({ theme }) => ({
 
 const Left = styled(Box)(({ theme }) => ({
   flex: 1,
-  paddingTop: "100px",
+  paddingTop: { xs: "10px", sm: '100px' },
   minWidth: "300px",
-  maxWidth: "500px",
+  maxWidth: { xs: '100%', sm: '500px' },
   "& .heading": {
     fontSize: "2rem",
     color: "#083344",
@@ -105,18 +110,18 @@ const Left = styled(Box)(({ theme }) => ({
   },
 }));
 
-const StyledButton = styled(Button)({
-  backgroundColor: "#2a7b2e",
-  color: "white",
-  padding: "12px 30px",
-  borderRadius: "38px",
-  fontSize: "1.2rem",
-  textTransform: "none",
-  marginTop: "20px",
-  "&:hover": {
-    backgroundColor: "#ff6600",
-  },
-});
+// const StyledButton = styled(Button)({
+//   backgroundColor: "background.primary",
+//   color: "white",
+//   padding: "12px 30px",
+//   borderRadius: "38px",
+//   fontSize: "1.2rem",
+//   textTransform: "none",
+//   marginTop: "20px",
+//   "&:hover": {
+//     backgroundColor: "#685345ff",
+//   },
+// });
 
 const Right = styled(Box)(({ theme }) => ({
   flex: 1,

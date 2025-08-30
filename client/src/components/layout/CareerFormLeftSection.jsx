@@ -25,9 +25,16 @@ function CareerFormLeftSection() {
                 }}
             >
                 {/* Title */}
-                <Typography variant="h4" sx={{ fontWeight: 'bold', lineHeight: 1.3 }}>
+                <Typography
+                    variant="h3"
+                    sx={{
+                        fontWeight: 'bold',
+                        lineHeight: 1.3,
+                        color: 'text.primary',
+                        textAlign: { xs: 'justify', sm: 'center', md: 'left' }
+                    }}>
                     Start Your Journey to Success with Our Internship{' '}
-                    <Box component="span" sx={{ color: '#ff6600' }}>Opportunities</Box>
+                    <Box component="span" sx={{ color: 'text.secondary' }}>Opportunities</Box>
                 </Typography>
 
                 {/* Tagline box */}

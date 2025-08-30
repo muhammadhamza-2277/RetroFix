@@ -30,7 +30,7 @@ function ContactformLeftContent() {
                     maxWidth: theme.layout?.maxContentWidth || '100%',
                     mx: 'auto',
                     // mt: 6,
-                    px: 2,
+                    px: { xs: 0, sm: 2 },
                     flexWrap: 'wrap',
                 }}
             >
@@ -38,7 +38,7 @@ function ContactformLeftContent() {
                 <Box
                     sx={{
                         flex: 1,
-                        mt: '200px',
+                        mt: { xs: '50px', md: '200px' },
                         minWidth: 280,
                         maxWidth: 450,
                         fontSize: '1.1rem',
@@ -67,7 +67,8 @@ function ContactformLeftContent() {
                             position: 'relative',
                             zIndex: 2,
                         },
-                    }}
+                    }
+                    }
                 >
                     <Typography variant="h5" fontWeight={800} mb={2} fontSize={40} pt={3} pb={3} color='#ff6600'>
                         Our Support
@@ -112,7 +113,7 @@ function ContactformLeftContent() {
                     <Typography
                         mb={3}
                         component="a"
-                        href="mailto:info@gocconstructions.co.uk"
+                        href="mailto:info@retrofixsolutions.co.uk"
                         sx={{
                             color: '#fff',
                             // textDecoration: 'underline',
@@ -123,7 +124,7 @@ function ContactformLeftContent() {
                             },
                         }}
                     >
-                        info@gocconstructions.co.uk
+                        info@retrofixsolutions.co.uk
                     </Typography>
                 </Box>
 
@@ -131,7 +132,7 @@ function ContactformLeftContent() {
                 {/* Right side form */}
                 <ContactForm />
             </Box>
-        </LocalizationProvider>
+        </LocalizationProvider >
     )
 }
 

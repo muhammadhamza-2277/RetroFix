@@ -40,7 +40,7 @@ const HeatPumpBanner = () => {
           variant="h4"
           sx={{
             fontWeight: 800,
-            color: "#5AC346",
+            color: "background.primary",
             textTransform: "uppercase",
             mt: -5,
             pt: { xs: 6, sm: 8, md: 11 },
@@ -59,17 +59,18 @@ const HeatPumpBanner = () => {
           variant="subtitle1"
           sx={{
             color: "#000",
-            fontWeight: 700,
+            // fontWeight: 700,
             pt: { xs: 2, sm: 3 },
             fontSize: {
               xs: "1rem",
               sm: "1.1rem",
               md: "1.3rem",
             },
+            maxWidth: { xs: '400px', sm: '700px' },
             lineHeight: 1.3,
           }}
         >
-          Heat your home and water using renewable energy from the <br />
+          Heat your home and water using renewable energy from the
           air — with an efficient air source heat pump.
         </Typography>
       </Box>

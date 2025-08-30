@@ -8,21 +8,21 @@ const HeroSection = () => {
     <Box
       sx={{
         position: "relative",
-        width: "100vw",
-        height: "110vh",
+        // width: "100vw",
+        height: { xs: "90vh", sm: "110vh" },
         backgroundImage: `linear-gradient(to right, rgba(0.1, 0.1, 0.1, 0.9), rgba(0, 0, 0, 0.2)), url(${bg})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundSize: "cover",
         // backgroundAttachment: "fixed",
         display: "flex",
-        alignItems: "center",
+        alignItems: "start",
         // textAlign:"center",
         // justifyContent:"center",
         boxSizing: "border-box",
         // px: { xs: 3, md: 10 },
         px: { xs: 2, sm: 4, md: 10 },
-        py: 4,
+        py: { xs: 10, sm: '' },
 
 
       }}

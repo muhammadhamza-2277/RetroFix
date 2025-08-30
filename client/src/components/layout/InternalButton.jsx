@@ -26,7 +26,11 @@ const CtaSection = () => {
       }}
     >
       {/* Text Content */}
-      <Box sx={{ flex: '1 1 300px' }}>
+      <Box
+        sx={{
+          flex: '1 1 300px'
+        }}
+      >
         <Typography variant="h5" sx={{ fontSize: '1.7rem', mb: 1, paddingBottom: '8px', }}>
           Let us help you make your home warmer and more energy-efficient.
         </Typography>
@@ -36,7 +40,15 @@ const CtaSection = () => {
       </Box>
 
       {/* Button */}
-      <Box sx={{ flex: '0 0 auto', mt: { xs: 2, md: 0 } }}>
+      <Box
+        sx={{
+          flex: { xs: '1 1 auto', sm: '0 0 auto' },
+          // width: { xs: '100%', md: '' },
+          mt: { xs: 2, md: 0 },
+          display: 'flex',
+          justifyContent: { xs: 'center', md: 'flex-start' }, // center on xs, left on md+
+        }}
+      >
         <a href="#contact" style={{ textDecoration: 'none' }}>
           <Button
             variant="filled"
@@ -45,7 +57,7 @@ const CtaSection = () => {
             to="/check-eligibility"
             sx={{
               mt: 4,
-              alignSelf: { xs: 'center', md: 'flex-start' },
+              alignSelf: 'center',
               width: 'fit-content',
             }}
           >
@@ -53,7 +65,7 @@ const CtaSection = () => {
           </Button>
         </a>
       </Box>
-    </Box>
+    </Box >
   );
 };
 

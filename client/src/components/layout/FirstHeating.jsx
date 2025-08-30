@@ -16,10 +16,10 @@ const HeroSection = () => {
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
         display: "flex",
-        alignItems: "center",
+        alignItems: "start",
         boxSizing: "border-box",
         px: { xs: 2, sm: 4, md: 10 },
-        py: { xs: 4, sm: 6, md: 10 },
+        py: { xs: 10, sm: 6, md: 10 },
         mx: 'auto'
       }}
     >

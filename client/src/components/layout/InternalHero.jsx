@@ -8,7 +8,7 @@ const HeroSection = () => {
     <Box
       sx={{
         position: "relative",
-        width: "100vw",
+        // width: "100vw",
         height: "100vh",
         backgroundImage: `linear-gradient(to right, rgba(0.1, 0.1, 0.1, 0.9), rgba(0, 0, 0, 0.2)), url(${bg})`,
         backgroundRepeat: "no-repeat",
@@ -16,11 +16,11 @@ const HeroSection = () => {
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
         display: "flex",
-        alignItems: "center",
+        alignItems: "start",
         boxSizing: "border-box",
         // px: { xs: 3, md: 10 },
         px: { xs: 2, sm: 4, md: 10 },
-        py: { xs: 4, sm: 6, md: 10 },
+        py: { xs: 10, sm: 10, md: 10 },
 
 
       }}
@@ -61,7 +61,7 @@ const HeroSection = () => {
             fontWeight: 350,
           }}
         >
-          Internal wall insulation involves installing a stud frame, filling the gaps with high-quality insulation <br />material, and finishing with plasterboard. Once in place, we fully replaster the wall to create <br /> a smooth, durable surface that enhances comfort and energy efficiency.
+          Internal wall insulation involves installing a stud frame, filling the gaps with high-quality insulation material, and finishing with plasterboard. Once in place, we fully replaster the wall to create a smooth, durable surface that enhances comfort and energy efficiency.
         </Typography>
       </Box>
     </Box>

@@ -20,13 +20,9 @@ export default function BoilerUpgradeHero() {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          flexWrap: { sm: 'wrap', md: 'nowrap' },
-          width: theme.layout?.maxContentWidth || '',
+          flexWrap: { xs: 'wrap', sm: 'nowrap' },
           maxWidth: theme.layout?.maxContentWidth || '',
           py: { xs: 6, md: 14 },
-
-          // backgroundImage: `linear-gradient(to bottom right, rgba(255, 255, 255, 0.85), rgba(220, 255, 220, 0.75)), url(${bgImage})`,
-
           minHeight: '100vh',
           mx: 'auto',
         }}
@@ -35,6 +31,7 @@ export default function BoilerUpgradeHero() {
         <Box
           sx={{
             maxWidth: 600,
+            pr: '10px',
             animation: 'fadeInUp 1s ease-in-out',
             '@keyframes fadeInUp': {
               from: { opacity: 0, transform: 'translateY(40px)' },
@@ -47,7 +44,7 @@ export default function BoilerUpgradeHero() {
             fontWeight="bold"
             gutterBottom
             sx={{
-              color: '#ff6600',
+              color: 'text.secondary',
               letterSpacing: 1,
               animation: 'slideIn 1.4s ease forwards',
               opacity: 0,
@@ -94,7 +91,7 @@ export default function BoilerUpgradeHero() {
         >
           <Card
             sx={{
-              width: { xs: 380, sm: 360, md: 400 },
+              minWidth: { xs: 300, sm: 300, md: 400 },
               borderRadius: 5,
               overflow: 'hidden',
               boxShadow: '0 12px 36px rgba(0, 0, 0, 0.2)',
