@@ -310,7 +310,7 @@ const Footer = () => {
                                     display: "inline-block",
                                 }}
                             >
-                                Retrofixs Solutions
+                                Retrofix Solutions
                             </Typography>
 
                             {solutionsLinks.map((item) => (
