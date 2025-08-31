@@ -41,7 +41,7 @@ const AboutLoftSection = () => {
       >
         {/* Text Left */}
         <Grid item xs={12} md={5} sx={{
-          maxWidth: { md: '650px' }
+          maxWidth: { md: '40vw' }
         }}>
           <Typography
             variant="h4"
@@ -94,7 +94,7 @@ const AboutLoftSection = () => {
             src={loft2}
             alt="Loft insulation service"
             sx={{
-              width: { xs: '100%', sm: '400px', md: '350px' },
+              width: { xs: '100%', sm: '400px', md: '400px', lg: '500px' },
               borderRadius: '16px',
               boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
             }}

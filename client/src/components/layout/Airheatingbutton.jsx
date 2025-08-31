@@ -38,7 +38,7 @@ export default function BoilerUpgradeSteps() {
         backgroundAttachment: 'fixed',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        textAlign: 'center'
+        textalign: 'center'
       }}
     >
       <Typography

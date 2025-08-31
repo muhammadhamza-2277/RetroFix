@@ -8,7 +8,8 @@ const HeatPumpBanner = () => {
       sx={{
         position: "relative",
         width: "100%",
-        height: { xs: "400px", sm: "450px", md: "500px", lg: "550px" },
+        maxHeight: { xs: '90vh', sm: '100vh' },
+        minHeight: { xs: '90vh' },
         backgroundImage: `url(${heatPumpBanner})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -18,6 +19,7 @@ const HeatPumpBanner = () => {
         pt: { xs: 6, sm: 8, md: 10 },
         px: 2,
         textAlign: "center",
+        mt: { xs: 0, sm: '-60px' }
       }}
     >
       {/* Gradient Overlay */}

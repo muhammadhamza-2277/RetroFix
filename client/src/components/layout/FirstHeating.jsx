@@ -16,10 +16,10 @@ const HeroSection = () => {
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
         display: "flex",
-        alignItems: "start",
+        alignItems: { xs: "start", sm: 'center' },
         boxSizing: "border-box",
         px: { xs: 2, sm: 4, md: 10 },
-        py: { xs: 20, sm: 10, md: 10 },
+        py: { xs: 20, sm: 0, md: 10 },
         mx: 'auto'
       }}
     >
@@ -64,9 +64,7 @@ const HeroSection = () => {
           }}
         >
           Upgrade your home’s comfort with First Time Central Heating — the ideal
-          solution for <br />
           properties without existing systems, offering your first step toward a
-          warmer, <br />
           more energy-efficient living space.
         </Typography>
       </Box>
