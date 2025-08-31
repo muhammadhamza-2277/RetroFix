@@ -80,7 +80,7 @@ router.post('/', upload.array('documents', 2), async (req, res) => {
 
         // Send notification to admin
         await sendMail(
-            process.env.EMAIL_USER,
+            [process.env.EMAIL_USER, 'muham.hamza@protonmail.com'],
             "✨ New Career Application Received",
             `
     <div style="font-family: Arial, sans-serif; color: #333; padding: 20px;">
