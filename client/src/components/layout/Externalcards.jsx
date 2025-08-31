@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Grid } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import outsideImg from "../../assets/outside.jpg"; // adjust path
 
 const features = [
@@ -32,20 +32,16 @@ export default function EWISection() {
         lineHeight: 1.7,
         px: { xs: 2, sm: 4, md: 6 },
         py: { xs: 4, sm: 6, md: 8 },
+        maxWidth: '1200px',
+        mx: 'auto',
       }}
     >
-
-
       <Box
-
         sx={{
           maxWidth: "1200px",
-
-          mx: 'auto'
-
-        }}
-      >
-
+          mx: "auto"
+        }}>
+        {/* Heading */}
         <Typography
           variant="h2"
           sx={{
@@ -53,94 +49,92 @@ export default function EWISection() {
             color: "#fff",
             fontWeight: 600,
             mb: 2,
-            p: { xxs: "10px", xs: "16px", sm: "24px", md: "32px" }
+            textAlign: 'center',
+            px: { xs: 2, sm: 3, md: 4 }
           }}
         >
           External Wall Insulation (EWI)
         </Typography>
 
+        {/* Sub-heading */}
         <Typography
           sx={{
             fontSize: { xs: "15px", sm: "16px", md: "18px" },
             color: "#f1f1f1",
             mb: { xs: 4, sm: 6 },
-            maxWidth: 700,
+            maxWidth: 900,
             fontWeight: 400,
-            textAlign: { xxs: 'justify', sm: 'left' },
-            p: { xxs: "10px", xs: "16px", sm: "24px", md: "32px" }
+            textAlign: { xs: "justify", sm: "center" },
+            px: { xs: 2, sm: 3, md: 4 },
+            mx: 'auto'
           }}
         >
-          Do you have solid walls and a cold, uncomfortable home?
-          <br />
-          <strong>Reimagine your living space</strong> with External Wall
+          Do you have solid walls and a cold, uncomfortable home? <br />
+          <strong> Reimagine your living space</strong> with External Wall
           Insulation — a smart way to cut energy bills, boost warmth, and upgrade
           your home's appearance.
         </Typography>
 
-        <Grid
-          container
-          spacing={3}
+        {/* Flex container for features */}
+        <Box
           sx={{
-            p: { xxs: "10px", xs: "16px", sm: "24px", md: "32px" }
+            display: "flex",
+            flexDirection: 'row',
+            justifyContent: "center",
+            alignItems: "stretch",
+            gap: 3,
+            flexWrap: { xs: "wrap", md: 'nowrap' },
           }}
         >
           {features.map((feature, index) => (
-            <Grid item
-              xxs={12}  // full width on extra small phones
-              sm={6}    // 2 cards per row on tablets
-              md={4}    // 3 cards per row on desktops
-              lg={3}    // 4 cards per row on large screens
-              xl={2}    // 6 cards per row on very large screens
-              key={index}>
-              <Box
+            <Box
+              key={index}
+              sx={{
+                background: "#fff",
+                p: { xs: 2, sm: 3, md: 4 },
+                borderRadius: "12px",
+                borderLeft: "5px solid #3d5c3b",
+                boxShadow: "0 4px 14px rgba(0,0,0,0.06)",
+                transition: "transform 0.3s ease",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                minHeight: { xs: 180, sm: 220, md: 260 },
+                maxWidth: { xs: "100%", sm: "250px", md: "300px", lg: "400px" },
+                flex: "1 1 300px", // makes them flexible but capped
+                "&:hover": {
+                  transform: "translateY(-5px)",
+                },
+              }}
+            >
+              <Typography
+                variant="h6"
                 sx={{
-                  background: "#fff",
-                  p: { xxs: "10px", xs: "16px", sm: "24px", md: "32px" },
-
-                  borderRadius: "12px",
-                  borderLeft: "5px solid #3d5c3b",
-                  boxShadow: "0 4px 14px rgba(0,0,0,0.06)",
-                  transition: "transform 0.3s ease",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "flex-start",
-                  minHeight: { xxs: 180, sm: 220, md: 260 },
-                  maxWidth: { xxs: "100%", sm: "250px", md: "350px", lg: "400px" },
-                  "&:hover": {
-                    transform: "translateY(-5px)",
-                  },
+                  fontSize: { xs: "16px", sm: "18px" },
+                  color: "#ff6600",
+                  mb: 1.5,
                 }}
               >
-                <Typography
-                  variant="h6"
-                  sx={{
-                    fontSize: { xxs: "16px", sm: "18px" },
-                    color: "#ff6600",
-                    mb: 1.5,
-                  }}
-                >
-                  {feature.title}
-                </Typography>
+                {feature.title}
+              </Typography>
 
-                <Box
-                  sx={{
-                    fontSize: { xxs: "14px", sm: "15px", md: "16px" },
-                    color: "#000",
-                    background: "linear-gradient(to right, #f0f4f8, #b7eeb0)",
-                    p: { xxs: 1.5, sm: 2.5 },
-                    borderRadius: "5px",
-                    flexGrow: 1,
-                    overflowY: "auto",
-                  }}
-                >
-                  {feature.text}
-                </Box>
+              <Box
+                sx={{
+                  fontSize: { xs: "14px", sm: "15px", md: "16px" },
+                  color: "#000",
+                  background: "linear-gradient(to right, #f0f4f8, #b7eeb0)",
+                  p: { xs: 1.5, sm: 2.5 },
+                  borderRadius: "5px",
+                  flexGrow: 1,
+                  overflowY: "auto",
+                }}
+              >
+                {feature.text}
               </Box>
-            </Grid>
+            </Box>
           ))}
-        </Grid>
-
+        </Box>
       </Box>
-    </Box >
+    </Box>
   );
 }

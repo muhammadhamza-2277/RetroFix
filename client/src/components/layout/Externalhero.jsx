@@ -34,7 +34,7 @@ export default function HighlightedSection() {
             src={ewiImg} // imported image here
             alt="Home Image"
             sx={{
-              width: "100%",
+              width: { xs: '100%', sm: '70%', md: "100%" },
               minWidth: { xxm: '300px', md: "420px" },
               borderRadius: "12px",
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.3)",

@@ -344,7 +344,7 @@ const Footer = () => {
                     {/* Unit 8, Reaymer close, Bloxwich ,Walsall, WS2 7QZ */}
                 </Box>
                 <Box sx={{ textAlign: 'center', pt: 2, color: '#aaa', fontSize: '0.9rem', }}>
-                    © 2025 Retrofixs Solutions Ltd. All rights reserved.
+                    © 2025 Retrofix Solutions Ltd. All rights reserved.
                 </Box>
             </Container>
         </Box>
