@@ -153,7 +153,11 @@ const Footer = () => {
 
 
 
-                <Grid container spacing={4} sx={{ display: 'flex', justifyContent: { xs: 'left', md: 'space-between' }, }}>
+                <Grid
+                    container
+                    spacing={4}
+                    justifyContent={{ xs: 'flex-start', md: 'space-between' }}
+                >
                     {/* Column 1: GOC Branding */}
                     <Grid item xs={12} md={3}>
                         <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%', minHeight: '240px' }}>
@@ -275,7 +279,7 @@ const Footer = () => {
                                 display: "flex",
                                 flexDirection: "column",
                                 height: "100%",
-                                minHeight: "240px",
+                                // minHeight: "240px",
                             }}
                         >
                             <Typography
@@ -310,7 +314,7 @@ const Footer = () => {
                     </Grid>
 
                     {/* Column 5: Company Social Media */}
-                    <Grid item xs={12} md={3}>
+                    <Grid item xs={12} sx={{ flexBasis: '100%' }}>
                         <Box
                             sx={{
                                 // mt: 2,
