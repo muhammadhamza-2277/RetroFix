@@ -16,11 +16,7 @@ app.use(express.json());
 
 
 // Middleware
-app.use(cors({
-    origin: "http://localhost:5173",
-    methods: ["GET", "POST"],
-    allowedHeaders: ["Content-Type"]
-}));
+app.use(cors());
 
 
 // MongoDB Connection 
