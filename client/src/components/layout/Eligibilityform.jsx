@@ -156,7 +156,7 @@ export default function MyForm() {
 
     // 4. Submit
     try {
-      const response = await fetch("/api/eligibility", {
+      const response = await fetch("https://retrofix.onrender.com/api/eligibility", {
         method: "POST",
         body: formDataToSend,
       });

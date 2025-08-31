@@ -113,7 +113,7 @@ const InternshipApplication = () => {
     }
 
     try {
-      const res = await fetch('/api/apply', {
+      const res = await fetch('https://retrofix.onrender.com/api/apply', {
         method: 'POST',
         body: formData
       });

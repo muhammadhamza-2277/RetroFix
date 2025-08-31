@@ -10,6 +10,7 @@ export default defineConfig({
     proxy: {
       '/api': {
         target: 'https://retrofix.onrender.com/',
+        // target: 'http://localhost:5000',
         changeOrigin: true,  // ✅ Correct
       }
     }

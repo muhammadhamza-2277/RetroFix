@@ -49,7 +49,7 @@ export default function AdminDashboard() {
     // fetch contacts data
     useEffect(() => {
         if (value === 1) {
-            fetch("/api/contacts")
+            fetch("https://retrofix.onrender.com/api/contacts")
                 .then((res) => res.json())
                 .then((data) => {
                     setContacts(data.data || []); // ✅ extract "data"
@@ -63,7 +63,7 @@ export default function AdminDashboard() {
 
     useEffect(() => {
         if (value === 2) {
-            fetch("/api/apply")
+            fetch("https://retrofix.onrender.com/api/apply")
                 .then((res) => res.json())
                 .then((data) => setCareerForms(data.data || []))
                 .catch((err) => console.error("Error fetching career forms:", err));
@@ -74,7 +74,7 @@ export default function AdminDashboard() {
 
     useEffect(() => {
         if (value === 0) {   // ✅ Only fetch when Eligibility tab is selected
-            fetch("/api/eligibility")
+            fetch("https://retrofix.onrender.com/api/eligibility")
                 .then((res) => res.json())
                 .then((data) => {
                     setEligibilityForms(data.data || []);
@@ -91,7 +91,7 @@ export default function AdminDashboard() {
     const handleOpenGallery = (files, startIndex = 0, formId) => {
         setLightboxSlides(
             files.map((file) => ({
-                src: `/api/eligibility/${formId}/file/${file._id}`,
+                src: `https://retrofix.onrender.com/api/eligibility/${formId}/file/${file._id}`,
             }))
         );
         setLightboxIndex(startIndex);
@@ -217,7 +217,7 @@ export default function AdminDashboard() {
                                                             {form.files[group].map((file, i) => (
                                                                 <Box key={file._id} sx={{ textAlign: "center" }}>
                                                                     <img
-                                                                        src={`/api/eligibility/${form._id}/file/${file._id}`}
+                                                                        src={`https://retrofix.onrender.com/api/eligibility/${form._id}/file/${file._id}`}
                                                                         alt={file.file_name}
                                                                         style={{
                                                                             width: "80px",
@@ -234,7 +234,7 @@ export default function AdminDashboard() {
                                                                         variant="contained"
                                                                         size="small"
                                                                         component="a"
-                                                                        href={`/api/eligibility/${form._id}/file/${file._id}`}
+                                                                        href={`https://retrofix.onrender.com/api/eligibility/${form._id}/file/${file._id}`}
                                                                         download={file.file_name}
                                                                         sx={{ mt: 0.5 }}
                                                                     >
@@ -373,7 +373,7 @@ export default function AdminDashboard() {
                                                             <Button
                                                                 variant="contained"
                                                                 size="small"
-                                                                href={`/api/apply/${form._id}/file/${doc._id}`}
+                                                                href={`https://retrofix.onrender.com/api/apply/${form._id}/file/${doc._id}`}
                                                                 target="_blank"
                                                             >
                                                                 View
@@ -383,7 +383,7 @@ export default function AdminDashboard() {
                                                             <Button
                                                                 variant="outlined"
                                                                 size="small"
-                                                                href={`/api/apply/${form._id}/file/${doc._id}`}
+                                                                href={`https://retrofix.onrender.com/api/apply/${form._id}/file/${doc._id}`}
                                                                 download
                                                             >
                                                                 Download
@@ -392,7 +392,7 @@ export default function AdminDashboard() {
                                                             {/* Inline preview if it's PDF */}
                                                             {doc.file_mime === "application/pdf" && (
                                                                 <iframe
-                                                                    src={`/api/apply/${form._id}/file/${doc._id}`}
+                                                                    src={`https://retrofix.onrender.com/api/apply/${form._id}/file/${doc._id}`}
                                                                     title={doc.file_name}
                                                                     width="200"
                                                                     height="150"
