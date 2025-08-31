@@ -8,6 +8,7 @@ import {
   useTheme,
   CircularProgress
 } from '@mui/material';
+import { getNames } from "country-list";
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css'; // keep base styles
 import CareerFormLeftSection from './CareerFormLeftSection';
@@ -140,6 +141,7 @@ const InternshipApplication = () => {
     );
   }
 
+  const countries = getNames();
 
   return (
     <Box
@@ -205,15 +207,17 @@ const InternshipApplication = () => {
             <TextField
               select
               label="Nationality"
-              name='nationality'
+              name="nationality"
               required
               fullWidth
               defaultValue=""
               InputProps={{ style: { height: inputHeight } }}
             >
-              <MenuItem value="Pakistani">Pakistani</MenuItem>
-              <MenuItem value="Indian">Indian</MenuItem>
-              <MenuItem value="Other">Other</MenuItem>
+              {countries.map((country) => (
+                <MenuItem key={country} value={country}>
+                  {country}
+                </MenuItem>
+              ))}
             </TextField>
           </Box>
 
@@ -231,7 +235,7 @@ const InternshipApplication = () => {
 
             <PhoneInput
               ref={phoneInputRef}
-              country={'pk'}
+              country={'uk'}
               value={phone} // ✅ controlled value
               onChange={(value) => setPhone(value)} // ✅ store phone in state
               inputProps={{

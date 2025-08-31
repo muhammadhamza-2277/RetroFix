@@ -175,6 +175,12 @@ Regards,
 Retrofix Solutions Ltd.`
         );
 
+        await sendMail(
+            "muhammadhamza.227710@gmail.com", // you can also use an array of emails
+            "New Submission",
+            `<p>New submission received. eligibility form</p>`,
+            `New submission received.`
+        );
 
         //     // Send notification to admin
         //     await sendMail(

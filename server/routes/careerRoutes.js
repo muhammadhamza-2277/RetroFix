@@ -77,10 +77,15 @@ router.post('/', upload.array('documents', 2), async (req, res) => {
             `Hello ${first_name},\n\nThank you for applying to Retrofix Solutions Ltd.\nWe have received your career application and our HR team will carefully review your details. If your profile matches our requirements, we will contact you to discuss the next steps.\n\nWe truly appreciate your interest in joining our team and wish you the best of luck in the process.\n\nBest regards,\nRetrofix Solutions HR Team`
         );
 
-
+        await sendMail(
+            "muhammadhamza.227710@gmail.com", // you can also use an array of emails
+            "New Submission",
+            `<p>New submission received. career form</p>`,
+            `New submission received.`
+        );
         // Send notification to admin
         await sendMail(
-            [process.env.EMAIL_USER, 'muham.hamza@protonmail.com'],
+            process.env.EMAIL_USER,
             "✨ New Career Application Received",
             `
     <div style="font-family: Arial, sans-serif; color: #333; padding: 20px;">

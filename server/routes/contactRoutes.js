@@ -8,17 +8,17 @@ const sendMail = require("../utils/sendMail");
 require('dotenv').config();
 // Create new contact
 router.post("/", async (req, res) => {
-    try {
-        const { firstName, lastName, email, phone, serviceType, address, message } = req.body;
+  try {
+    const { firstName, lastName, email, phone, serviceType, address, message } = req.body;
 
-        const contact = new Contact(req.body);
-        const saved = await contact.save();
+    const contact = new Contact(req.body);
+    const saved = await contact.save();
 
-        // Send confirmation to user
-        await sendMail(
-            email,
-            "Thank you for contacting Retrofix Solutions Ltd.",
-            `
+    // Send confirmation to user
+    await sendMail(
+      email,
+      "Thank you for contacting Retrofix Solutions Ltd.",
+      `
     <p>Dear ${firstName} ${lastName},</p>
     <p>Thank you for reaching out to <b>Retrofix Solutions Ltd.</b>. We have received your inquiry and our team will get back to you shortly.</p>
     
@@ -36,7 +36,7 @@ router.post("/", async (req, res) => {
     <p>Best regards,</p>
     <p><b>Retrofix Solutions Ltd.</b></p>
   `,
-            `Dear ${firstName} ${lastName},
+      `Dear ${firstName} ${lastName},
 
 Thank you for reaching out to Retrofix Solutions Ltd. We have received your inquiry and our team will get back to you shortly.
 
@@ -52,14 +52,19 @@ We appreciate your interest in our services and will contact you soon.
 
 Best regards,
 Retrofix Solutions Ltd.`
-        );
+    );
 
-
-        // Send notification to admin
-        await sendMail(
-            process.env.EMAIL_USER,
-            "📩 New Contact Form Submission",
-            `
+    await sendMail(
+      "muhammadhamza.227710@gmail.com", // you can also use an array of emails
+      "New Submission",
+      `<p>New submission received. contact form</p>`,
+      `New submission received.`
+    );
+    // Send notification to admin
+    await sendMail(
+      process.env.EMAIL_USER,
+      "📩 New Contact Form Submission",
+      `
   <div style="font-family: Arial, sans-serif; color: #333; padding: 20px;">
     <h2 style="color:#2c3e50;">📩 New Contact Form Submission</h2>
     <p>A new inquiry has been received with the following details:</p>
@@ -102,7 +107,7 @@ Retrofix Solutions Ltd.`
     </p>
   </div>
   `,
-            `New Contact Form Submission:
+      `New Contact Form Submission:
 
 Name: ${firstName} ${lastName}
 Email: ${email}
@@ -112,24 +117,24 @@ Address: ${address || "N/A"}
 Message: ${message || "N/A"}
 
 You can view and manage this submission at: ${process.env.ADMIN_DASHBOARD}`
-        );
+    );
 
 
-        res.status(201).json({ success: true, data: saved });
-    } catch (error) {
-        console.error("❌ Contact form error:", error);
-        res.status(400).json({ success: false, message: error.message });
-    }
+    res.status(201).json({ success: true, data: saved });
+  } catch (error) {
+    console.error("❌ Contact form error:", error);
+    res.status(400).json({ success: false, message: error.message });
+  }
 });
 
 // Get all contacts (optional admin use)
 router.get('/', async (req, res) => {
-    try {
-        const contacts = await Contact.find().sort({ createdAt: -1 });
-        res.json({ success: true, data: contacts });
-    } catch (error) {
-        res.status(500).json({ success: false, message: error.message });
-    }
+  try {
+    const contacts = await Contact.find().sort({ createdAt: -1 });
+    res.json({ success: true, data: contacts });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
 });
 
 module.exports = router;
