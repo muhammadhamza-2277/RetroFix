@@ -12,6 +12,9 @@ require('dotenv').config();
 const app = express();
 app.use(express.json());
 
+
+
+
 // Middleware
 app.use(cors({
     origin: "http://localhost:5173",
@@ -20,10 +23,9 @@ app.use(cors({
 }));
 
 
-// MongoDB Connection (local)
-mongoose.connect('mongodb://127.0.0.1:27017/forms', {
+// MongoDB Connection 
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
 }).then(() => console.log('MongoDB connected'))
     .catch(err => console.error('MongoDB error:', err));
 
