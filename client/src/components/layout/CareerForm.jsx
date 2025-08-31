@@ -5,7 +5,8 @@ import {
   TextField,
   Button,
   MenuItem,
-  useTheme
+  useTheme,
+  CircularProgress
 } from '@mui/material';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css'; // keep base styles
@@ -18,6 +19,8 @@ const InternshipApplication = () => {
   const [fileError, setFileError] = useState('');
   const [phone, setPhone] = useState('');
 
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const inputHeight = '56px';
 
@@ -74,18 +77,12 @@ const InternshipApplication = () => {
     }, 0);
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (humanCheck !== '11') {
-  //     alert('Please answer the human verification correctly.');
-  //     return;
-  //   }
-  //   alert('Form submitted successfully!');
-  // };
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    setLoading(true); // ✅ prevent multiple clicks
 
     if (humanCheck !== '11') {
       alert('Please answer the human verification correctly.');
@@ -126,7 +123,22 @@ const InternshipApplication = () => {
       console.error(err);
       alert('Error submitting form. Please try again.');
     }
+
+    setTimeout(() => {
+      setLoading(false);
+      setSubmitted(true);
+    }, 2000);
   };
+
+  if (submitted) {
+    return (
+      <Box textAlign="center" p={4}>
+        <Typography variant="h5" gutterBottom>
+          ✅ Thanks for Showing Interest in RetroFix Solutions Ltd. We will get back to you soon!
+        </Typography>
+      </Box>
+    );
+  }
 
 
   return (
@@ -333,6 +345,7 @@ const InternshipApplication = () => {
           <Button
             type="submit"
             variant='filled'
+            disabled={loading}
             sx={{
               mt: 2,
               // background: 'linear-gradient(to right, #00b894, #009970)',
@@ -347,9 +360,25 @@ const InternshipApplication = () => {
             }
             }
           >
-            Submit
+            {loading ? "Submitting..." : "Submit"}
           </Button>
         </Box>
+        {loading && (
+          <Box
+            sx={{
+              position: "absolute",
+              inset: 0, // shorthand for top:0, right:0, bottom:0, left:0
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              bgcolor: "rgba(255,255,255,0.7)",
+              borderRadius: 1,
+              zIndex: 10,
+            }}
+          >
+            <CircularProgress />
+          </Box>
+        )}
       </Box>
 
     </Box>

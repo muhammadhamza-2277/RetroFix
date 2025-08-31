@@ -106,37 +106,149 @@ router.post("/", upload.any(), async (req, res) => {
         await doc.save();
 
 
+        //     await sendMail(
+        //         doc.email,
+        //         "Thanks for contacting Retrofix Solutions Ltd.",
+        //         `
+        //   <div>
+        //     <h2>Hello ${foreName},</h2>
+        //     <p>Thank you for contacting <b>Retrofix Solutions Ltd.</b> regarding your eligibility check.</p>
+        //     <p>Our Team will get back to you soon with your <b>Eligibility</b> status.</p>
+        //   </div>
+        // `,
+        //         `Hello ${foreName},\n\nThank you for contacting Retrofix Solutions Ltd. regarding your eligibility check.\n Our Team will get back to you soon with your Eligibility status.`
+        //     );
+
         await sendMail(
             doc.email,
-            "Thanks for contacting Retrofix Solutions Ltd.",
+            "✅ Your Eligibility Check Request – Retrofix Solutions Ltd.",
             `
-      <div>
-        <h2>Hello ${foreName},</h2>
-        <p>Thank you for contacting <b>Retrofix Solutions Ltd.</b> regarding your eligibility check.</p>
-        <p>Our Team will get back to you soon with your <b>Eligibility</b> status.</p>
-      </div>
-    `,
-            `Hello ${foreName},\n\nThank you for contacting Retrofix Solutions Ltd. regarding your eligibility check.\n Our Team will get back to you soon with your Eligibility status.`
+    <div style="font-family: Arial, sans-serif; color: #333; padding: 20px;">
+      <h2 style="color:#2c3e50;">Hello ${doc.foreName},</h2>
+
+      <p>Thank you for submitting your <b>Eligibility Check</b> request with 
+      <b>Retrofix Solutions Ltd.</b>.</p>
+
+      <p>We have successfully received your details, and our assessment team will carefully review your information to determine your eligibility.</p>
+
+      <h3 style="margin-top:20px; color:#2c3e50;">📋 Summary of Your Submission</h3>
+      <table style="border-collapse: collapse; width: 100%; margin-top: 10px;">
+        <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>Name</b></td><td style="padding: 8px; border: 1px solid #ddd;">${doc.foreName} ${doc.surName}</td></tr>
+        <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>Email</b></td><td style="padding: 8px; border: 1px solid #ddd;">${doc.email}</td></tr>
+        <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>Phone</b></td><td style="padding: 8px; border: 1px solid #ddd;">${doc.phone}</td></tr>
+        <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>Address</b></td><td style="padding: 8px; border: 1px solid #ddd;">${doc.doorNo} ${doc.address}, ${doc.town}, ${doc.postCode}</td></tr>
+        <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>House Type</b></td><td style="padding: 8px; border: 1px solid #ddd;">${doc.houseType || "N/A"}</td></tr>
+        <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>Wall Type</b></td><td style="padding: 8px; border: 1px solid #ddd;">${doc.wallType || "N/A"}</td></tr>
+        <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>Heating Age</b></td><td style="padding: 8px; border: 1px solid #ddd;">${doc.heatingAge || "N/A"}</td></tr>
+        <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>Loft Year</b></td><td style="padding: 8px; border: 1px solid #ddd;">${doc.loftYear || "N/A"}</td></tr>
+        <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>Benefits Claimed</b></td><td style="padding: 8px; border: 1px solid #ddd;">${doc.benefitsClaimed || "N/A"}</td></tr>
+      </table>
+
+      <p style="margin-top: 20px;">📨 Our team will be in touch with you shortly to confirm your eligibility status.</p>
+
+      <p style="margin-top: 30px; font-size: 14px; color:#555;">
+        Regards,<br/>
+        <b>Retrofix Solutions Ltd.</b>
+      </p>
+    </div>
+  `,
+            `Hello ${doc.foreName},
+
+Thank you for submitting your Eligibility Check request with Retrofix Solutions Ltd.
+
+We have received your details, and our assessment team will review your information to determine your eligibility.
+
+Here’s a summary of your submission:
+- Name: ${doc.foreName} ${doc.surName}
+- Email: ${doc.email}
+- Phone: ${doc.phone}
+- Address: ${doc.doorNo} ${doc.address}, ${doc.town}, ${doc.postCode}
+- House Type: ${doc.houseType || "N/A"}
+- Wall Type: ${doc.wallType || "N/A"}
+- Heating Age: ${doc.heatingAge || "N/A"}
+- Loft Year: ${doc.loftYear || "N/A"}
+- Benefits Claimed: ${doc.benefitsClaimed || "N/A"}
+
+Our team will contact you soon with your eligibility status.
+
+Regards,  
+Retrofix Solutions Ltd.`
         );
 
+
+        //     // Send notification to admin
+        //     await sendMail(
+        //         process.env.EMAIL_USER,
+        //         "New Eligibility Form Submission",
+        //         `
+        //   <div>
+        //     <h2>New Eligibility Form Submission</h2>
+        //     <p><b>Name:</b> ${foreName} ${surName}</p>
+        //     <p><b>Email:</b> ${email}</p>
+        //     <p><b>Phone:</b> ${phone}</p>
+
+        //     <a href="http://localhost:5173/admin">Visit admin panel</a>
+
+        //   </div>
+        // `
+        //     );
 
 
         // Send notification to admin
         await sendMail(
             process.env.EMAIL_USER,
-            "New Eligibility Form Submission",
+            "📥 New Eligibility Form Submission",
             `
-      <div>
-        <h2>New Eligibility Form Submission</h2>
-        <p><b>Name:</b> ${foreName} ${surName}</p>
-        <p><b>Email:</b> ${email}</p>
-        <p><b>Phone:</b> ${phone}</p>
-        
-        <a href="http://localhost:5173/admin">Visit admin panel</a>
+    <div style="font-family: Arial, sans-serif; color: #333; padding: 20px;">
+      <h2 style="color:#2c3e50;">New Eligibility Form Submission</h2>
+      <p>A new eligibility form has been submitted with the following details:</p>
 
-      </div>
-    `
+      <table style="border-collapse: collapse; width: 100%; margin-top: 15px;">
+        <tr>
+          <td style="padding: 8px; border: 1px solid #ddd;"><b>Name</b></td>
+          <td style="padding: 8px; border: 1px solid #ddd;">${doc.foreName} ${doc.surName}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border: 1px solid #ddd;"><b>Email</b></td>
+          <td style="padding: 8px; border: 1px solid #ddd;">${doc.email}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border: 1px solid #ddd;"><b>Phone</b></td>
+          <td style="padding: 8px; border: 1px solid #ddd;">${doc.phone}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border: 1px solid #ddd;"><b>Post Code</b></td>
+          <td style="padding: 8px; border: 1px solid #ddd;">${doc.postCode}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border: 1px solid #ddd;"><b>Town</b></td>
+          <td style="padding: 8px; border: 1px solid #ddd;">${doc.town}</td>
+        </tr>
+      </table>
+
+      <p style="margin-top: 20px;">
+        🔗 <a href="${process.env.ADMIN_DASHBOARD}" style="color:#2980b9; text-decoration:none; font-weight:bold;">
+        Visit Admin Panel to view full details</a>
+      </p>
+
+      <p style="margin-top: 30px; font-size: 14px; color:#555;">
+        Regards,<br/>
+        <b>Retrofix Solutions – System Notification</b>
+      </p>
+    </div>
+  `,
+            `New Eligibility Form Submission:
+
+Name: ${doc.foreName} ${doc.surName}
+Email: ${doc.email}
+Phone: ${doc.phone}
+Post Code: ${doc.postCode}
+Town: ${doc.town}
+
+You can view full details in the Admin Dashboard:
+${process.env.ADMIN_DASHBOARD}`
         );
+
 
 
 
